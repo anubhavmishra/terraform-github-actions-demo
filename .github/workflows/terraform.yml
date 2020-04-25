@@ -80,7 +80,8 @@ jobs:
       run: terraform fmt -check
 
     # Generates an execution plan for Terraform
-    - id: plan
+    - name: Terraform Plan
+      id: plan
       run: terraform plan -no-color
 
     - uses: actions/github-script@0.9.0
