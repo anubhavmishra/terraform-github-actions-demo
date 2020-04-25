@@ -86,7 +86,7 @@ jobs:
 
     - uses: actions/github-script@0.9.0
       env:
-        STDOUT: ${{ steps.plan.outputs.stdout }}
+        STDOUT: "```${{ steps.plan.outputs.stdout }}```"
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
