@@ -58,5 +58,5 @@ resource "aws_s3_bucket_object" "website_example" {
   source       = "index.html"
   content_type = "text/html"
 
-  etag = "${filemd5("index.html")}"
+  etag = filemd5("index.html")
 }
