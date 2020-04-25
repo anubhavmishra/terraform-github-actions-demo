@@ -6,7 +6,7 @@ provider "cloudflare" {
 
 resource "cloudflare_record" "root" {
   zone_id = var.cloudflare_zone_id
-  name    = "${var.domain_example}"
+  name    = var.domain_example
   value   = "www.${var.domain_example}"
   type    = "CNAME"
   proxied = true

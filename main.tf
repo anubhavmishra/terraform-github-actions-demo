@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "website_www" {
 
 resource "aws_s3_bucket" "website_subdomain" {
 
-  bucket = "${var.domain_example}"
+  bucket = var.domain_example
   acl    = "private"
   policy = ""
 
@@ -58,5 +58,5 @@ resource "aws_s3_bucket_object" "website_example" {
   source       = "index.html"
   content_type = "text/html"
 
-  etag = "${filemd5("index.html")}"
+  etag = filemd5("index.html")
 }
