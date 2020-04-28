@@ -21,24 +21,19 @@
         </script>
         <script type="text/javascript">
             var orderCoffee = function (itemkey) {
-                console.log("I am in getValue!")
                 $.ajax({
                     type: "GET",
                     url: "https://keyvalue.immanuel.co/api/KeyVal/GetValue/" + "o2zrsbxm" + "/" + itemkey,
                     contentType: false,
                     processData: false
                 }).done(function (data) {
-                    console.log(data);
-                    
                     if (data == "") {
                         updateValue(itemkey, "1");
-                        console.log("created order");
                         return
                     }
 
                     if (data != "") {
                         actOnValue(itemkey, "Increment");
-                        console.log("order count!");
                         $('<div>Total orders: ' + data + '</div>').insertAfter('#orderButton').delay(3000).fadeOut();
                         return
                     }
@@ -66,7 +61,6 @@
                     contentType: false,
                     processData: false
                 }).done(function (data) {
-                    console.log(data)
 
                 }).fail(function (err) {
 
