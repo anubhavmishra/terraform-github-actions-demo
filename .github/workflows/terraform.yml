@@ -79,6 +79,10 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
+    # Terraform validate
+    - name: Terraform Validate
+      run: terraform validate
+
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       id: plan
