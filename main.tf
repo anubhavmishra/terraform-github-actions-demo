@@ -61,7 +61,7 @@ resource "aws_s3_bucket_object" "website_example" {
   etag = filemd5("index.html")
 }
 
-resource "aws_s3_bucket_object" "website_example" {
+resource "aws_s3_bucket_object" "website_error" {
   key          = "error.html"
   bucket       = aws_s3_bucket.website_www.id
   source       = "error.html"
